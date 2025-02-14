@@ -24,4 +24,8 @@ describe("add", () => {
     const result = add("1\n1,1");
     assert.equal(result, 3);
   });
+  it("should allow delimiter in string to separate numbers", () => {
+    const result = add("//;\n1;2");
+    assert.equal(result, 3);
+  });
 });
