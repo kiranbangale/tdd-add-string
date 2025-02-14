@@ -14,8 +14,10 @@ describe("add", () => {
     const result = add("1");
     assert.equal(result, 1);
   });
-  it("should return addition of two numbers passed in string separated by comma", () => {
-    const result = add("1,1");
-    assert.equal(result, 2);
+  it("should return addition of two or n number of numbers passed in string separated by comma", () => {
+    const resultWithTwoNumbers = add("1,1");
+    assert.equal(resultWithTwoNumbers, 2);
+    const resultWithThreeNumbers = add("1,1,1");
+    assert.equal(resultWithThreeNumbers, 3);
   });
 });
