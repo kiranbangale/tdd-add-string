@@ -14,4 +14,8 @@ describe("add", () => {
     const result = add("1");
     assert.equal(result, 1);
   });
+  it("should return addition of two numbers passed in string separated by comma", () => {
+    const result = add("1,1");
+    assert.equal(result, 2);
+  });
 });
