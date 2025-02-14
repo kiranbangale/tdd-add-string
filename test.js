@@ -1,6 +1,7 @@
 const add = (str) => {
-  let numbers = new Array();
+  let numbers = [];
   let delimiter = ",";
+  let arrWithNegativeNumbers = [];
 
   if (str && str.length > 0) {
     if (str[0] === "/") {
@@ -11,7 +12,13 @@ const add = (str) => {
     str = str.replace("\n", delimiter);
     numbers = str.split(delimiter).map((str) => parseInt(str));
 
-    return numbers.reduce((sum, num) => sum + num, 0);
+    arrWithNegativeNumbers = numbers.filter((num) => num < 0);
+    if (arrWithNegativeNumbers.length) {
+      console.error("Negative numbers not allowed" + arrWithNegativeNumbers);
+      return `Negative numbers not allowed ${arrWithNegativeNumbers}`;
+    } else {
+      return numbers.reduce((sum, num) => sum + num, 0);
+    }
   } else {
     return 0;
   }

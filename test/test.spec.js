@@ -28,4 +28,8 @@ describe("add", () => {
     const result = add("//;\n1;2");
     assert.equal(result, 3);
   });
+  it("should throw error if string has negative numbers", () => {
+    const result = add("1,-2,-3");
+    assert.equal(result, "Negative numbers not allowed -2,-3");
+  });
 });
