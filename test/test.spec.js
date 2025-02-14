@@ -20,4 +20,8 @@ describe("add", () => {
     const resultWithThreeNumbers = add("1,1,1");
     assert.equal(resultWithThreeNumbers, 3);
   });
+  it("should allow new line(\n) instead of comma in string to separate numbers", () => {
+    const result = add("1\n1,1");
+    assert.equal(result, 3);
+  });
 });
